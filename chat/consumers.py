@@ -37,7 +37,7 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
     async def chatroom_message(self, event):
         message = event['message']
         username = event['username']
-
+        
         await self.send(text_data=json.dumps({
             'message': message,
             'username': username,
